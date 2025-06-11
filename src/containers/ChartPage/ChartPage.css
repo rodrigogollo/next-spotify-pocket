@@ -1,0 +1,7 @@
+.chart-page {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 475px;
+	max-height: 475px;
+}

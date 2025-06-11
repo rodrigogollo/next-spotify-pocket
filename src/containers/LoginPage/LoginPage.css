@@ -1,0 +1,20 @@
+.login {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.login button {
+	padding: 1rem 1.5rem;
+	background: var(--color-green);
+	border: 1px solid var(--color-darkest);
+	border-radius: 25px;
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+.login button:hover {
+	cursor: pointer;
+	filter: brightness(80%);
+}

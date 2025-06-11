@@ -1,0 +1,31 @@
+.controls {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.controls button {
+	padding: 8px;
+	margin: .5px;
+	border: none;
+	background: none;
+	color: var(--color-light);
+	filter: brightness(80%);
+}
+
+.controls #play {
+	color: var(--color-green);
+}
+
+.controls button:hover {
+	cursor: pointer;
+	filter: brightness(120%);
+}
+
+.controls .active {
+	color: var(--color-green);
+	background: none;
+}
+.controls .active2 {
+	color: red;
+}

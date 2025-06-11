@@ -1,0 +1,42 @@
+.scrolling-text-container {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.scrolling-text {
+  display: none;
+}
+
+.needs-scroll {
+  cursor: pointer;
+}
+
+.needs-scroll:hover .scrolling-text {
+  display: inline-block;
+}
+
+.needs-scroll:hover {
+  animation: scroll 10s linear infinite;
+}
+
+.needs-scroll.main .scrolling-text {
+  display: inline-block;
+}
+
+.needs-scroll.main {
+  animation: scroll 10s linear infinite;
+}
+
+.main {
+  font-weight: bold;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+

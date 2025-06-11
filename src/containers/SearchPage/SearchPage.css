@@ -1,0 +1,100 @@
+.search-page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 475px;
+	max-height: 475px;
+	width: 100%;
+}
+
+.search-nav {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 100%;
+	padding: 4px 4px;
+	position: sticky;
+	background: var(--color-dark);
+	z-index: 2;
+	min-height: 40px;
+	max-height: 40px;
+	top: 0;
+	left: 0;
+}
+
+.searched-songs {
+	width: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	--scrollbar-width: calc(100vw - 100%);
+	min-height: 390px;
+	max-height: 390px;
+  display: flex;
+  flex-direction: column;
+}
+
+.searched-songs::-webkit-scrollbar {
+  width: 6px;
+}
+
+.searched-songs::-webkit-scrollbar-track {
+  background: var(--color-dark);        /* color of the tracking area */
+}
+
+.searched-songs::-webkit-scrollbar-thumb {
+  background-color: var(--color-green);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+}
+
+.search-nav input[type="text"] {
+	flex-grow: 1;
+	flex-shrink: 1;
+	background: var(--color-darkest);
+  border: none;
+	color: var(--color-light);
+  padding: 4px;
+  border-radius: 4px 4px 0 0;
+	border-bottom: 1px solid var(--color-darkest);
+}
+
+.search-nav input[type="text"]:focus {
+  outline: none;
+	border-bottom: 1px solid var(--color-green);
+}
+
+.search-nav button {
+	flex-grow: 0;
+	padding: 4px 10px;
+	margin: 0 4px;
+	background: none;
+	border: none;
+	color: var(--color-light);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.search-nav .delete {
+	position: absolute;
+	left: 420px;
+	color: var(--color-light);
+	font-size: 10px;
+}
+
+.delete:hover {
+	filter: brightness(80%);
+  color: var(--color-green);
+	cursor: pointer;
+}
+
+.search-nav button:hover {
+  filter: brightness(80%);
+  color: var(--color-green);
+  cursor: pointer;
+}
+
+.searched-songs p {
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+  padding: 8px;
+}

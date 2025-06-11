@@ -1,0 +1,24 @@
+.playlist-container {
+  display: flex;
+	flex-direction: column;
+	background-color: var(--color-dark);
+	color: var(--color-light);
+	overflow-y: auto;
+	overflow-x: hidden;
+	--scrollbar-width: calc(100vw - 100%);
+	max-height: 475px;
+	min-height: 475px;
+}
+
+.playlist-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.playlist-container::-webkit-scrollbar-track {
+  background: var(--color-dark);        /* color of the tracking area */
+}
+
+.playlist-container::-webkit-scrollbar-thumb {
+  background-color: var(--color-green);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+}

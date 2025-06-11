@@ -1,0 +1,44 @@
+nav { 
+	display: flex;
+	flex-direction: row;
+	position: sticky;
+	top: 0;
+	background: var(--color-dark);
+	width: 100vw;
+	border-bottom: 4px solid var(--color-green);
+	padding: 6px 4px;
+	flex-shrink: 0;
+	overflow: hidden;
+	z-index: 10;
+	justify-content: center;
+	align-items: center;
+}
+
+nav a {
+	color: var(--color-light);
+	text-decoration: none;
+	font-weight: bold;
+	padding: 0 4px;
+}
+
+nav svg {
+	padding: 6px;
+	border-radius: 50%;
+}
+
+nav p:hover,
+nav svg:hover
+{
+	background: var(--color-green);
+	color: var(--color-darkest);
+	cursor: pointer;
+}
+
+nav a.active .icon {
+	background: var(--color-green);
+	color: var(--color-darkest);
+}
+
+nav .options {
+	margin-left: auto;
+}

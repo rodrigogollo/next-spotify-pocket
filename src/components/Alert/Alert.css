@@ -1,0 +1,14 @@
+.alert {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 10;
+  width: 100vw;
+  height: 40px;
+  background: white;
+  color: black;
+}
+
+.active {
+  display: inline-block;
+}

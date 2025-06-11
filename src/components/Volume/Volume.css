@@ -1,0 +1,42 @@
+.volume {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 150px;
+}
+
+.volume .icon {
+	margin-right: 4px;
+	max-width: 20px;
+	min-width: 20px;
+	cursor: pointer;
+	color: var(--color-light);
+	filter: brightness(80%);
+}
+
+.volume .icon:hover {
+	cursor: pointer;
+	filter: brightness(120%);
+}
+
+.volume > input {
+	margin: 0 2px 0 4px;
+}
+
+input[type=range] {
+	accent-color: var(--color-green);
+	cursor: pointer;
+	width: 100%;
+	-webkit-appearance: none;
+	background: var(--color-light);
+	height: .3rem;
+	border-radius: 15px;
+}
+
+.volume #bubble {
+  display: none;
+}
+
+.volume input[type="range"]:active + #bubble {
+  display: block;
+}

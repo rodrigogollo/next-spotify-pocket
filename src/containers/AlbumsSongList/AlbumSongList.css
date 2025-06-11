@@ -1,0 +1,44 @@
+.album-songs {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  overflow-y: auto;
+  overflow-x: hidden;
+  --scrollbar-width: calc(100vw - 100%);
+  max-height: 475px;
+  min-height: 475px;
+}
+
+.album-songs::-webkit-scrollbar {
+  width: 6px;
+}
+
+.album-songs::-webkit-scrollbar-track {
+  background: var(--color-dark);        /* color of the tracking area */
+}
+
+.album-songs::-webkit-scrollbar-thumb {
+  background-color: var(--color-green);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+}
+
+.album-header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  max-height: 100px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+}
+
+.album-header img {
+  width: 40px;
+  height: 40px;
+}
+
+.album-header .icon:hover {
+    cursor: pointer;
+	filter: brightness(80%);
+}

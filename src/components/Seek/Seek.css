@@ -1,0 +1,17 @@
+.seek {
+	display: flex;
+	flex-direction: row;
+	padding: 8px 4px;
+	justify-content: space-around;
+	width: 100vw;
+	align-items: center;
+}
+
+.seek p {
+	flex: 0 0 auto;
+}
+
+.seek input[type="range"] {
+	flex: 1;
+	margin: 0 4px;
+}

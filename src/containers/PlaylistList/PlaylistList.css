@@ -1,0 +1,63 @@
+.playlist-list { 
+  background-color: var(--color-dark);
+	width: 100%;
+}
+
+.playlist-list a {
+	text-decoration: none;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.current-playlist {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border-bottom: 1px solid var(--color-middle);
+	font-size: 18px;
+	width: 100%;
+}
+
+.current-playlist-text {
+	color: var(--color-light);
+	font-size: 18px;
+	flex-grow: 1;
+	flex-shrink: 1;
+	min-width: 0;
+	z-index: 0;
+	padding: 4px;
+  overflow: hidden;
+}
+
+.current-playlist-text:hover {
+  color: var(--color-green);
+}
+
+.current-playlist img {
+	flex-grow: 0;
+	flex-shrink: 0;
+	height: 100%;
+	z-index: 1;
+	background: var(--color-dark);
+	width: 60px;
+	height: 60px;
+	padding: 4px;
+}
+
+.current-playlist:hover {
+	border-bottom: 1px solid var(--color-green);
+}
+
+.current-playlist::-webkit-scrollbar {
+  width: 6px;
+}
+
+.current-playlist::-webkit-scrollbar-track {
+  background: var(--color-dark);        /* color of the tracking area */
+}
+
+.current-playlist::-webkit-scrollbar-thumb {
+  background-color: var(--color-green);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+}
