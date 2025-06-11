@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { useAuthStore } from "./authStore";
 import { invoke } from "@tauri-apps/api/core";
 import { persist } from "zustand/middleware";
+import axios from "axios";
 
 type SpotifyStore = {
   player: Spotify.Player | null;
@@ -162,7 +163,14 @@ export const useSpotifyStore = create<SpotifyStore>()(
         try {
           console.log("transferDevice", device_id);
           if (!get().isDeviceConnected) {
-            let isDeviceTransfered: boolean = await invoke('transfer_playback', { accessToken: token, deviceId: device_id });
+            // let isDeviceTransfered: boolean = await invoke('transfer_playback', { accessToken: token, deviceId: device_id });
+
+            let isDeviceTransfered: boolean = await axios.post('http://localhost:9876/spotify/transfer-playback', 
+              { 
+                accessToken: token, 
+                deviceId: device_id 
+              })
+
             set(() => ({ isDeviceConnected: isDeviceTransfered, isPlayerReady: true }));
             // useSetSong(!get().currentUri);
             console.log("Device successfully transfered");

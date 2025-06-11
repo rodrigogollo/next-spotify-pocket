@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/auth', authRoutes);
-// app.use('/spotify', spotifyRoutes);
+app.use('/spotify', spotifyRoutes);
 
 
 app.listen(port, () => {

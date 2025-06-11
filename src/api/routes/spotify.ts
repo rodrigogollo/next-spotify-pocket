@@ -1,6 +1,6 @@
 import express, { Router, Request, Response } from 'express';
 import axios from 'axios';
-import { CheckSavedTracksQuery } from '../types/spotify';
+import { CheckSavedTracksQuery, SpotifyTransferPayload, TransferPlaybackRequest } from '../types/spotify';
 
 const router: Router = express.Router();
 
@@ -99,5 +99,58 @@ router.post('/tracks', async (req: Request, res: Response) => {
         });
     }
 });
+
+router.post('/transfer-playback', async (req: Request, res: Response) => {  
+  try {
+    const { accessToken, deviceId }: TransferPlaybackRequest = req.body;
+
+    if (!accessToken || !deviceId) {
+      return res.status(400).json({ 
+        error: 'Missing required fields: accessToken and deviceId' 
+      });
+    }
+
+    const success = await transferPlayback(accessToken, deviceId);
+    
+    res.json({ success });
+  } catch (error) {
+    console.error('Error in transfer-playback endpoint:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+
+async function transferPlayback(accessToken: string, deviceId: string): Promise<boolean> {
+  console.log(`token: ${accessToken}, device: ${deviceId}`);
+  
+  const url = 'https://api.spotify.com/v1/me/player';
+  const authorization = `Bearer ${accessToken}`;
+  const payload: SpotifyTransferPayload = {
+    device_ids: [deviceId]
+  };
+
+  try {
+    const response = await axios.put(url, payload, {
+      headers: {
+        'Authorization': authorization,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    console.log('Device successfully transferred');
+    return true;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      console.log(`Error transferring device ${deviceId}: ${error.message}`);
+      if (error.response) {
+        console.log(`Status: ${error.response.status}, Data:`, error.response.data);
+      }
+    } else {
+      console.log(`Error transferring device ${deviceId}: ${error}`);
+    }
+    return false;
+  }
+}
+
 
 export default router;

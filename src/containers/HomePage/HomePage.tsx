@@ -11,7 +11,7 @@ const HomePage = () => {
       {!isPlayerReady ?
         <Loading /> :
         <div className="home">
-          <LikedSongs />
+          {/* <LikedSongs /> */}
         </div>
       }
     </>
